@@ -65,6 +65,7 @@
       "@interfaces":["src/interfaces/*"],
       "@services":["src/services/*"],
       "@utils":["src/utils"],
+      "@genericStyles":["src/app/styles/*"]
     },
   },
   "include": ["index.d.ts", "src/**/*", "src/App.test.tsx"],

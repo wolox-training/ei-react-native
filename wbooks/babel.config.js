@@ -16,8 +16,7 @@ module.exports = {
           '@config': './src/config',
           '@interfaces': './src/interfaces',
           '@services': './src/services',
-          '@utils': './src/utils',
-          '@genericStyles': './src/app/styles'
+          '@utils': './src/utils'
         }
       }
     ]

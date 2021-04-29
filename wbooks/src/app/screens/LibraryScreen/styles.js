@@ -1,15 +1,16 @@
 import { StyleSheet } from 'react-native';
-import { Blue } from '@constants/colors';
+import { blue } from '@constants/colors';
 
-export const libraryScreenStyles = StyleSheet.create({
+const libraryStyles = StyleSheet.create({
   container: {
     flex: 1
   },
   text: {
-    color: Blue,
+    color: blue,
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
     marginTop: 20
   }
 });
+export default libraryStyles;

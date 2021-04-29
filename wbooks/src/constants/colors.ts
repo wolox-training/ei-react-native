@@ -1,3 +1,3 @@
-export const Blue = 'cornflowerblue';
-export const White = '#FFF';
-export const Black = '#323232';
+export const blue = '#6495ed';
+export const white = '#FFF';
+export const black = '#323232';

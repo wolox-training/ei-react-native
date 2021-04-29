@@ -1,6 +1,5 @@
 export const GeneralColors = {
-    Blue: 'cornflowerblue',
-    White: '#FFF',
-    Black: '#323232'
-  };
-  
+  Blue: 'cornflowerblue',
+  White: '#FFF',
+  Black: '#323232'
+};

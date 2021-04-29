@@ -17,7 +17,7 @@ module.exports = {
           '@interfaces': './src/interfaces',
           '@services': './src/services',
           '@utils': './src/utils',
-          '@genericStyles':'./src/app/styles'
+          '@genericStyles': './src/app/styles'
         }
       }
     ]

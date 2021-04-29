@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, SafeAreaView } from 'react-native';
+
 import { libraryScreenStyles } from './LibraryScreenStyle';
 
 const LibaryScreen = () => {

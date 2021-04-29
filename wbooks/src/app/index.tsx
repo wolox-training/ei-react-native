@@ -1,7 +1,5 @@
 import React, { FC } from 'react';
-
 import { SafeAreaView, ScrollView, View, StatusBar } from 'react-native';
-
 import LibaryScreen from '@views/LibraryScreen/LibraryScreen';
 
 import { indexStyles } from './indexStyle';

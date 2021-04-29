@@ -56,8 +56,15 @@
     // "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
     "paths": {
-      "@app/*": ["src/app/*"],
-      "@constants/*": ["src/constants/*"]
+      "@app/*": ["src/app"],
+      "@constants/*": ["src/constants/*"],
+      "@components/*":["src/app/components/*"],
+      "@assets/*":["src/app/assets/*"],
+      "@views/*":["src/app/views/*"],
+      "@config/*":["src/config/*"],
+      "@interfaces":["src/interfaces/*"],
+      "@services":["src/services/*"],
+      "@utils":["src/utils"],
     },
   },
   "include": ["index.d.ts", "src/**/*", "src/App.test.tsx"],

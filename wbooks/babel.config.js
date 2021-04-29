@@ -9,7 +9,14 @@ module.exports = {
         extensions: ['.ios.js', '.android.js', '.js', '.jsx', '.ts', '.tsx', '.json'],
         alias: {
           '@app': './src/app',
-          '@constants': './src/constants'
+          '@constants': './src/constants',
+          '@components': './src/app/components',
+          '@assets': './src/app/hooks',
+          '@views': './src/app/views',
+          '@config': './src/config',
+          '@interfaces': './src/interfaces',
+          '@services': './src/services',
+          '@utils': './src/utils'
         }
       }
     ]

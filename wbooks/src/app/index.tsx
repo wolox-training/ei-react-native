@@ -1,20 +1,18 @@
 import React, { FC } from 'react';
-import { SafeAreaView, ScrollView, View, StatusBar } from 'react-native';
-import LibaryScreen from '@screens/LibraryScreen/LibraryScreen';
+import { ScrollView, View, StatusBar } from 'react-native';
+import Library from '@screens/LibraryScreen/Libary';
 
-import styles from './styles';
+import { styles } from './styles';
 
 const App: FC = () => {
   return (
     <>
-      <StatusBar backgroundColor="transparent" translucent barStyle="dark-content" />
-      <SafeAreaView style={styles.container}>
-        <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
-          <View style={styles.body}>
-            <LibaryScreen />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
+      <StatusBar backgroundColor="transparent" barStyle="dark-content" />
+      <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
+        <View style={styles.body}>
+          <Library />
+        </View>
+      </ScrollView>
     </>
   );
 };

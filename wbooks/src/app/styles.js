@@ -1,10 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { white } from '@constants/colors';
 
-const indexStyles = StyleSheet.create({
-  container: {
-    marginTop: 30
-  },
+export const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: white
   },
@@ -16,4 +13,3 @@ const indexStyles = StyleSheet.create({
     backgroundColor: white
   }
 });
-export default indexStyles;

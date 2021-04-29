@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { blue } from '@constants/colors';
 
-const libraryStyles = StyleSheet.create({
+export const styles = StyleSheet.create({
   container: {
     flex: 1
   },
@@ -13,4 +13,3 @@ const libraryStyles = StyleSheet.create({
     marginTop: 20
   }
 });
-export default libraryStyles;

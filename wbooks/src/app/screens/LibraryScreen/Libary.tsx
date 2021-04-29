@@ -1,9 +1,9 @@
 import React from 'react';
 import { Text, SafeAreaView } from 'react-native';
 
-import styles from './styles';
+import { styles } from './styles';
 
-function LibaryScreen() {
+function Libary() {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.text}>Library Screen</Text>
@@ -12,4 +12,4 @@ function LibaryScreen() {
   );
 }
 
-export default LibaryScreen;
+export default Libary;

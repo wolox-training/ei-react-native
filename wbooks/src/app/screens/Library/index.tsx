@@ -3,7 +3,7 @@ import { Text, SafeAreaView } from 'react-native';
 
 import { styles } from './styles';
 
-function Libary() {
+function Library() {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.text}>Library Screen</Text>
@@ -12,4 +12,4 @@ function Libary() {
   );
 }
 
-export default Libary;
+export default Library;

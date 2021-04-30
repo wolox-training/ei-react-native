@@ -60,11 +60,11 @@
       "@constants/*": ["src/constants/*"],
       "@components/*":["src/app/components/*"],
       "@assets/*":["src/app/assets/*"],
-      "@views/*":["src/app/views/*"],
+      "@screens/*":["src/app/screens/*"],
       "@config/*":["src/config/*"],
       "@interfaces":["src/interfaces/*"],
       "@services":["src/services/*"],
-      "@utils":["src/utils"],
+      "@utils":["src/utils"]
     },
   },
   "include": ["index.d.ts", "src/**/*", "src/App.test.tsx"],

@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
 import { Image, Text, View } from 'react-native';
-
-import imageNotFound from '../../assets/General/not_image_found.png';
+import imageNotFound from '@assets/General/not_image_found.png';
 
 import styles from './styles';
 

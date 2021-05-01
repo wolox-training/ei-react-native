@@ -62,6 +62,7 @@
       "@assets/*":["src/app/assets/*"],
       "@screens/*":["src/app/screens/*"],
       "@config/*":["src/config/*"],
+      "@hooks/*":["src/app/hooks/*"],
       "@interfaces":["src/interfaces/*"],
       "@services":["src/services/*"],
       "@utils":["src/utils"]

@@ -1,21 +1,20 @@
 import { StyleSheet } from 'react-native';
-import { white } from '@constants/colors';
+import { white, gray } from '@constants/colors';
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   containerCard: {
-    display: 'flex',
     flexDirection: 'row',
     height: 120,
     elevation: 2,
     borderRadius: 5,
+    shadowColor: gray,
     shadowOffset: {
-      width: 12,
-      height: 12
+      width: 0,
+      height: 2
     },
-    shadowOpacity: 16.0,
+    shadowOpacity: 16,
     width: '85%',
-    marginLeft: 'auto',
-    marginRight: 'auto',
+    alignSelf: 'center',
     backgroundColor: white,
     padding: 20,
     alignItems: 'center',
@@ -30,9 +29,8 @@ export const styles = StyleSheet.create({
     fontSize: 15
   },
   containerText: {
-    alignSelf: 'flex-start',
+    height: '100%',
     width: '60%',
-    display: 'flex',
     flexDirection: 'column'
   },
   image: {
@@ -40,3 +38,4 @@ export const styles = StyleSheet.create({
     width: 53
   }
 });
+export default styles;

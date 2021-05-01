@@ -30,8 +30,7 @@ const styles = StyleSheet.create({
   },
   containerText: {
     height: '100%',
-    width: '60%',
-    flexDirection: 'column'
+    width: '60%'
   },
   image: {
     height: 80,

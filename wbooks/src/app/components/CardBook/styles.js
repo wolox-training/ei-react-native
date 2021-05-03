@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
   containerCard: {
     flexDirection: 'row',
     height: 95,
-    elevation: 2,
     borderRadius: 5,
     shadowColor: gray,
     shadowOffset: {
@@ -23,15 +22,13 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
   titleCard: {
-    fontSize: 20,
-    fontWeight: 'bold'
+    fontSize: 19
   },
   authorCard: {
     fontSize: 13,
     marginTop: 3
   },
   containerText: {
-    height: '100%',
     width: '70%'
   },
   image: {

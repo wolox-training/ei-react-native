@@ -4,7 +4,7 @@ import { white, gray } from '@constants/colors';
 const styles = StyleSheet.create({
   containerCard: {
     flexDirection: 'row',
-    height: 120,
+    height: 95,
     elevation: 2,
     borderRadius: 5,
     shadowColor: gray,
@@ -13,28 +13,31 @@ const styles = StyleSheet.create({
       height: 2
     },
     shadowOpacity: 16,
-    width: '85%',
+    width: '89%',
     alignSelf: 'center',
     backgroundColor: white,
     paddingVertical: 20,
     alignItems: 'center',
     justifyContent: 'space-around',
-    paddingHorizontal: 8,
+    paddingHorizontal: 15,
     marginBottom: 10
   },
   titleCard: {
-    fontSize: 22
+    fontSize: 20,
+    fontWeight: 'bold'
   },
   authorCard: {
-    fontSize: 15
+    fontSize: 13,
+    marginTop: 3
   },
   containerText: {
     height: '100%',
-    width: '60%'
+    width: '70%'
   },
   image: {
-    height: 80,
-    width: 53
+    borderWidth: 1,
+    height: 60,
+    width: 42
   }
 });
 export default styles;

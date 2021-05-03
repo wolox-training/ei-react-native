@@ -14,11 +14,12 @@ interface Props {
 export default function CardBook({ image, title, author }: Props): ReactElement {
   return (
     <View style={styles.containerCard}>
-      {image ? (
-        <Image source={{ uri: image }} style={styles.image} resizeMode="contain" resizeMethod="resize" />
-      ) : (
-        <Image source={imageNotFound} style={styles.image} resizeMethod="resize" resizeMode="cover" />
-      )}
+      <Image
+        source={image ? { uri: image } : imageNotFound}
+        style={styles.image}
+        resizeMode={image ? 'contain' : 'cover'}
+        resizeMethod="resize"
+      />
       <View style={styles.containerText}>
         <Text style={styles.titleCard}>{title}</Text>
         <Text style={styles.authorCard}>{author}</Text>

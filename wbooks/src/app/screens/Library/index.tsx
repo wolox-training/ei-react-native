@@ -1,13 +1,13 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import FlatListHome from '@components/FlatListHome';
+import BookList from '@components/BookList';
 
 import styles from './styles';
 
 function Library() {
   return (
     <SafeAreaView style={styles.container}>
-      <FlatListHome />
+      <BookList />
     </SafeAreaView>
   );
 }

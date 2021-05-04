@@ -11,8 +11,8 @@ interface BookInterface {
 }
 
 export default function BookList(): ReactElement {
-  const renderBookList: ListRenderItem<BookInterface> = ({ item }) => (
-    <CardBook author={item.author} image={item.imageUrl} title={item.title} id={item.id} />
+  const renderBookList: ListRenderItem<BookInterface> = ({ item: { author, imageUrl, title, id } }) => (
+    <CardBook author={author} image={imageUrl} title={title} id={id} />
   );
 
   const keyExtractorBook = (item: { id: number }) => item.id.toString();

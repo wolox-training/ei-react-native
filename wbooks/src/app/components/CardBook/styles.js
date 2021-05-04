@@ -1,41 +1,31 @@
 import { StyleSheet } from 'react-native';
-import { white, gray } from '@constants/colors';
+import { white } from '@constants/colors';
 
 const styles = StyleSheet.create({
   containerCard: {
     flexDirection: 'row',
     height: 95,
-    elevation: 2,
     borderRadius: 5,
-    shadowColor: gray,
-    shadowOffset: {
-      width: 0,
-      height: 2
-    },
-    shadowOpacity: 16,
     width: '89%',
     alignSelf: 'center',
     backgroundColor: white,
     paddingVertical: 20,
-    alignItems: 'center',
+    alignItems: 'stretch',
     justifyContent: 'space-around',
     paddingHorizontal: 15,
     marginBottom: 10
   },
   titleCard: {
-    fontSize: 20,
-    fontWeight: 'bold'
+    fontSize: 19
   },
   authorCard: {
     fontSize: 13,
     marginTop: 3
   },
   containerText: {
-    height: '100%',
     width: '70%'
   },
   image: {
-    borderWidth: 1,
     height: 60,
     width: 42
   }

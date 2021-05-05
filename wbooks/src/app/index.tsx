@@ -1,12 +1,15 @@
 import React, { FC } from 'react';
 import { StatusBar } from 'react-native';
-import Library from '@screens/Library';
+import { NavigationContainer } from '@react-navigation/native';
+import Navigator from '@navigator';
 
 const App: FC = () => {
   return (
     <>
       <StatusBar backgroundColor="transparent" barStyle="dark-content" />
-      <Library />
+      <NavigationContainer>
+        <Navigator />
+      </NavigationContainer>
     </>
   );
 };

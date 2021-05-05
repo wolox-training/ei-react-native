@@ -65,7 +65,8 @@
       "@hooks/*":["src/app/hooks/*"],
       "@interfaces":["src/interfaces/*"],
       "@services":["src/services/*"],
-      "@utils":["src/utils"]
+      "@utils":["src/utils"],
+      "@navigator":["src/app/navigator"],
     },
   },
   "include": ["index.d.ts", "src/**/*", "src/App.test.tsx"],

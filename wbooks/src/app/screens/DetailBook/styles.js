@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
 import { whiteBlue } from '@constants/colors';
 
-const BORDER_RADIUS_BOTTOM = 20;
+const BORDER_RADIUS_BOTTOM = 4;
 
 export const styles = StyleSheet.create({
   container: {
+    paddingTop: 20,
     flex: 1,
     width: '100%',
     backgroundColor: whiteBlue
@@ -23,8 +24,7 @@ export const styles = StyleSheet.create({
   },
   images: {
     height: 400,
-    borderBottomRightRadius: BORDER_RADIUS_BOTTOM,
-    borderBottomLeftRadius: BORDER_RADIUS_BOTTOM,
+    borderRadius: BORDER_RADIUS_BOTTOM,
     width: '100%'
   }
 });

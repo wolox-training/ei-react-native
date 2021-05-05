@@ -26,7 +26,7 @@ export default function DetailBook({
         source={image ? { uri: image } : notImageFound}
         style={styles.images}
         resizeMethod="auto"
-        resizeMode="cover"
+        resizeMode="contain"
       />
       <View style={styles.containerText}>
         <Text style={styles.title}>{title}</Text>

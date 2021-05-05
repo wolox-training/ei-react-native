@@ -67,7 +67,6 @@
       "@services":["src/services/*"],
       "@utils":["src/utils"],
       "@navigator":["src/app/navigator"],
-      "@routes":["src/app/routes"]
     },
   },
   "include": ["index.d.ts", "src/**/*", "src/App.test.tsx"],

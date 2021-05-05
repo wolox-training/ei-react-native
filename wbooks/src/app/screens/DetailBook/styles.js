@@ -1,6 +1,8 @@
 import { StyleSheet } from 'react-native';
 import { whiteBlue } from '@constants/colors';
 
+const borderRadiusBottom = 20;
+
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -21,8 +23,8 @@ export const styles = StyleSheet.create({
   },
   images: {
     height: 400,
-    borderBottomRightRadius: 20,
-    borderBottomLeftRadius: 20
+    borderBottomRightRadius: borderRadiusBottom,
+    borderBottomLeftRadius: borderRadiusBottom
   }
 });
 

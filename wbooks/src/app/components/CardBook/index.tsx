@@ -15,8 +15,11 @@ interface Props {
 
 export default function CardBook({ image, title, author, id }: Props): ReactElement {
   const navigation = useNavigation();
+  const handleClick = () => {
+    navigation.navigate('DetailBook', { image, title, author, id });
+  };
   return (
-    <TouchableWithoutFeedback onPress={() => navigation.navigate('DetailBook', { image, title, author, id })}>
+    <TouchableWithoutFeedback onPress={handleClick}>
       <View style={styles.containerCard}>
         <Image
           source={image ? { uri: image } : imageNotFound}

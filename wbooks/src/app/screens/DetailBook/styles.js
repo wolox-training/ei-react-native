@@ -1,7 +1,8 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { whiteBlue } from '@constants/colors';
 
 const borderRadiusBottom = 20;
+const platformMarginTop = Platform.OS === 'ios' ? 60 : 20;
 
 export const styles = StyleSheet.create({
   container: {
@@ -10,7 +11,7 @@ export const styles = StyleSheet.create({
     backgroundColor: whiteBlue
   },
   containerText: {
-    marginTop: 20
+    marginTop: platformMarginTop
   },
   title: {
     textAlign: 'center',

@@ -18,7 +18,8 @@ module.exports = {
           '@interfaces': './src/interfaces',
           '@services': './src/services',
           '@utils': './src/utils',
-          '@navigation': './src/app/navigation'
+          '@navigator': './src/app/navigator',
+          '@routes': './src/app/routes'
         }
       }
     ]

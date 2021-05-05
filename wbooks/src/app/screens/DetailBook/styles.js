@@ -1,8 +1,7 @@
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { whiteBlue } from '@constants/colors';
 
-const borderRadiusBottom = 20;
-const platformMarginTop = Platform.OS === 'ios' ? 60 : 20;
+const BORDER_RADIUS_BOTTOM = 20;
 
 export const styles = StyleSheet.create({
   container: {
@@ -11,7 +10,7 @@ export const styles = StyleSheet.create({
     backgroundColor: whiteBlue
   },
   containerText: {
-    marginTop: platformMarginTop
+    marginTop: 20
   },
   title: {
     textAlign: 'center',
@@ -24,8 +23,9 @@ export const styles = StyleSheet.create({
   },
   images: {
     height: 400,
-    borderBottomRightRadius: borderRadiusBottom,
-    borderBottomLeftRadius: borderRadiusBottom
+    borderBottomRightRadius: BORDER_RADIUS_BOTTOM,
+    borderBottomLeftRadius: BORDER_RADIUS_BOTTOM,
+    width: '100%'
   }
 });
 

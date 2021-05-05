@@ -3,6 +3,7 @@ import { Image, Text, View } from 'react-native';
 import imageNotFound from '@assets/General/not_image_found.png';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/core';
+import { DETAIL_BOOK } from '@routes';
 
 import styles from './styles';
 
@@ -15,11 +16,11 @@ interface Props {
 
 export default function CardBook({ image, title, author, id }: Props): ReactElement {
   const navigation = useNavigation();
-  const handleClick = () => {
-    navigation.navigate('DetailBook', { image, title, author, id });
+  const handlePress = () => {
+    navigation.navigate(DETAIL_BOOK, { image, title, author, id });
   };
   return (
-    <TouchableWithoutFeedback onPress={handleClick}>
+    <TouchableWithoutFeedback onPress={handlePress}>
       <View style={styles.containerCard}>
         <Image
           source={image ? { uri: image } : imageNotFound}

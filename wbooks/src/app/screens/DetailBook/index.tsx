@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import { Image, Text, View } from 'react-native';
+import notImageFound from '@assets/General/not_image_found.png';
 
 import styles from './styles';
 
@@ -21,9 +22,12 @@ export default function DetailBook({
 }: Props): ReactElement {
   return (
     <View style={styles.container}>
-      {image && (
-        <Image source={{ uri: image }} style={styles.images} resizeMethod="scale" resizeMode="cover" />
-      )}
+      <Image
+        source={image ? { uri: image } : notImageFound}
+        style={styles.images}
+        resizeMethod="auto"
+        resizeMode="cover"
+      />
       <View style={styles.containerText}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.paragraph}>{author}</Text>

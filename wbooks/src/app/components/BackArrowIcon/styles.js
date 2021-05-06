@@ -1,12 +1,13 @@
 import { StyleSheet } from 'react-native';
 
+const ICON_SIZE = 20;
 const styles = StyleSheet.create({
   imageContainer: {
     marginLeft: 10
   },
   image: {
-    height: 20,
-    width: 20
+    height: ICON_SIZE,
+    width: ICON_SIZE
   }
 });
 

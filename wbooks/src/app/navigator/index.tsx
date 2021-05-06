@@ -1,20 +1,22 @@
-import React, { ReactElement } from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import Library from '@screens/Library';
-import DetailBook from '@screens/DetailBook';
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Routes from '@constants/routes';
-import { DETAIL_BOOK_OPTIONS, HOME_OPTIONS, STACK_NAVIGATOR_OPTIONS } from '@constants/screenOptions';
+import WishList from '@screens/WishList';
+import Suggest from '@screens/Suggest';
+import Rentals from '@screens/Rentals';
+import TabBar from '@components/TabBar';
 
-const Stack = createStackNavigator();
+import LibraryStack from './LibraryStack';
 
-export default function Navigator(): ReactElement {
+const Tab = createBottomTabNavigator();
+
+export default function TabNavigator() {
   return (
-    <Stack.Navigator
-      headerMode="float"
-      screenOptions={STACK_NAVIGATOR_OPTIONS}
-      initialRouteName={Routes.Home}>
-      <Stack.Screen name={Routes.Home} component={Library} options={HOME_OPTIONS} />
-      <Stack.Screen name={Routes.DetailBook} component={DetailBook} options={DETAIL_BOOK_OPTIONS} />
-    </Stack.Navigator>
+    <Tab.Navigator tabBar={props => <TabBar {...props} />}>
+      <Tab.Screen name={Routes.Home} component={LibraryStack} />
+      <Tab.Screen name={Routes.WishList} component={WishList} />
+      <Tab.Screen name={Routes.Suggest} component={Suggest} />
+      <Tab.Screen name={Routes.Rentals} component={Rentals} />
+    </Tab.Navigator>
   );
 }

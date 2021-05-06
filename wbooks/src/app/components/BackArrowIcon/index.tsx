@@ -1,18 +1,16 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
-import backArrow from '@assets/General/ic_back.png';
+import icBackArrow from '@assets/General/ic_back.png';
 import { useNavigation } from '@react-navigation/core';
 
 import styles from './styles';
 
-export default function BackArrowIcon(): ReactElement {
+export default function BackArrowIcon() {
   const navigation = useNavigation();
-  const handlePress = () => {
-    navigation.goBack();
-  };
+  const handlePress = () => navigation.goBack();
   return (
     <TouchableOpacity style={styles.imageContainer} onPress={handlePress}>
-      <Image source={backArrow} style={styles.image} resizeMethod="scale" resizeMode="contain" />
+      <Image source={icBackArrow} style={styles.image} resizeMethod="scale" resizeMode="contain" />
     </TouchableOpacity>
   );
 }

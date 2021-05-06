@@ -3,9 +3,10 @@ import { Platform } from 'react-native';
 import { white } from '@constants/colors';
 import { CardStyleInterpolators } from '@react-navigation/stack';
 import Header from '@components/Header';
-import NotificationIcon from '@components/NotificationIcon';
-import SeachIcon from '@components/SerchIcon';
 import BackArrowIcon from '@components/BackArrowIcon';
+import CustomIconHeader from '@components/CustomIconHeader';
+import icSearch from '@assets/General/ic_search.png';
+import icNotification from '@assets/General/ic_notifications.png';
 
 const ALIGN_CENTER_TITLE = 'center' as 'center';
 const TRANFORM_TEXT_UPPERCASE = 'uppercase' as 'uppercase';
@@ -16,8 +17,8 @@ export const HOME_OPTIONS = () => ({
   headerTitleAlign: ALIGN_CENTER_TITLE,
   headerStyle: HEADER_CUSTOM_STYLE,
   headerBackground: () => <Header />,
-  headerLeft: () => <NotificationIcon />,
-  headerRight: () => <SeachIcon />,
+  headerLeft: () => <CustomIconHeader icon={icNotification} />,
+  headerRight: () => <CustomIconHeader icon={icSearch} />,
   headerTintColor: white,
   headerTitleStyle: {
     textTransform: TRANFORM_TEXT_UPPERCASE

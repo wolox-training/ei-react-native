@@ -1,8 +1,7 @@
 import Routes from '@constants/routes';
 import React, { ReactElement, useState } from 'react';
 import { View } from 'react-native';
-
-import Tab from '../Tab';
+import Tab from '@components/Tab';
 
 import styles from './styles';
 

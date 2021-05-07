@@ -1,10 +1,8 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { cyan, lightGray } from '@constants/colors';
 
-const { width } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
-    width,
     height: '100%',
     alignItems: 'center'
   },

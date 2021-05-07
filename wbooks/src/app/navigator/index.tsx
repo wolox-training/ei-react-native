@@ -4,7 +4,7 @@ import Routes from '@constants/routes';
 import WishList from '@screens/WishList';
 import Suggest from '@screens/Suggest';
 import Rentals from '@screens/Rentals';
-import TabNav from '@components/TabBar';
+import TabBar from '@components/TabBar';
 import { TAB_BAR_OPTIONS } from '@constants/screenOptions';
 
 import LibraryStack from './LibraryStack';
@@ -12,7 +12,7 @@ import LibraryStack from './LibraryStack';
 const Tab = createBottomTabNavigator();
 
 const renderTab = (focused: boolean, name: string, key: string) => (
-  <TabNav focused={focused} currentTab={name} key={key} />
+  <TabBar focused={focused} currentTab={name} key={key} />
 );
 
 export default function TabNavigator() {

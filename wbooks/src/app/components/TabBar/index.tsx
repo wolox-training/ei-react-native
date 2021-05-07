@@ -16,7 +16,7 @@ interface Props {
   currentTab: string;
   focused: boolean;
 }
-export default function TabNav({ currentTab, focused }: Props) {
+export default function TabBar({ currentTab, focused }: Props) {
   const [imageActiveState, setImageActiveState] = useState<ImageSourcePropType>(icLibraryActive);
   const [imageInactiveState, setImageInactiveState] = useState<ImageSourcePropType>(icLibrary);
   const setIconImages = (tabName: string) => {

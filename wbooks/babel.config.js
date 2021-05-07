@@ -18,7 +18,8 @@ module.exports = {
           '@interfaces': './src/interfaces',
           '@services': './src/services',
           '@utils': './src/utils',
-          '@navigator': './src/app/navigator'
+          '@navigator': './src/app/navigator',
+          '@redux': './src/redux'
         }
       }
     ]

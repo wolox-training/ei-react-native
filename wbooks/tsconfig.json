@@ -63,10 +63,11 @@
       "@screens/*":["src/app/screens/*"],
       "@config/*":["src/config/*"],
       "@hooks/*":["src/app/hooks/*"],
-      "@interfaces":["src/interfaces/*"],
+      "@interfaces":["src/interfaces"],
       "@services":["src/services/*"],
       "@utils":["src/utils"],
       "@navigator":["src/app/navigator"],
+      "@redux/*":["src/redux/*"]
     },
   },
   "include": ["index.d.ts", "src/**/*", "src/App.test.tsx"],

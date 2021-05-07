@@ -38,3 +38,7 @@ export const DETAIL_BOOK_OPTIONS = () => ({
 export const STACK_NAVIGATOR_OPTIONS = {
   cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
 };
+
+export const TAB_BAR_OPTIONS = {
+  showLabel: false
+};

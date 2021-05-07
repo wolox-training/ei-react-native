@@ -5,8 +5,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: whiteBlue,
-    paddingTop: 5,
-    paddingBottom: 50
+    paddingTop: 5
   }
 });
 export default styles;

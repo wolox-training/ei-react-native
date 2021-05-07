@@ -1,27 +1,24 @@
-import { white } from '@constants/colors';
-import { StyleSheet, Dimensions, Platform } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+import { cyan, lightGray } from '@constants/colors';
 
-const { height } = Dimensions.get('window');
-
-const CUSTOM_HEIGHT = height > 720 && Platform.OS === 'ios' ? 60 : 50;
-
-const TOTAL_PERCENT = '100%';
-const SPACE_BETWEEN = 'space-between';
-
+const { width } = Dimensions.get('window');
 const styles = StyleSheet.create({
-  wrapper: {
-    position: 'absolute',
-    bottom: 0,
-    width: TOTAL_PERCENT,
-    alignItems: 'center',
-    justifyContent: SPACE_BETWEEN
-  },
   container: {
-    height: CUSTOM_HEIGHT,
-    flexDirection: 'row',
-    backgroundColor: white,
-    justifyContent: SPACE_BETWEEN,
-    width: TOTAL_PERCENT
+    width,
+    height: '100%',
+    alignItems: 'center'
+  },
+  image: {
+    height: 28,
+    width: 30,
+    marginTop: 3
+  },
+  textActive: {
+    color: cyan
+  },
+  textInactive: {
+    color: lightGray
   }
 });
+
 export default styles;

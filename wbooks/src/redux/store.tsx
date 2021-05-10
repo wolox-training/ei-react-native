@@ -1,6 +1,5 @@
 import { createStore } from 'redux';
-
-import Reactotron from '../../ReactotronConfig';
+import Reactotron from '@config/ReactotronConfig';
 
 import { bookListReducer } from './book/reducer';
 

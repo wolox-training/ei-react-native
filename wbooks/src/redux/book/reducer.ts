@@ -1,4 +1,4 @@
-import { BookInterface, BookType, BookActionsTypes } from '../../interfaces';
+import { BookInterface, BookType, BookActionsTypes } from '@interfaces';
 
 interface BookState {
   loading: boolean;

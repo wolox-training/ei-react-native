@@ -1,7 +1,6 @@
 import { BOOKS_MOCK } from '@constants/mockBooks';
 import { Dispatch } from 'redux';
-
-import { BookInterface, BookType } from '../../interfaces';
+import { BookInterface, BookType } from '@interfaces';
 
 const getAllBooks = async () => {
   const fakeBooksFetch: BookInterface[] = [];

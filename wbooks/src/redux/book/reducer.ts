@@ -1,25 +1,22 @@
-import { BookInterface, BookType, BookActionsTypes } from '@interfaces';
+import { BOOKS_MOCK } from '@constants/mockBooks';
+import { BookInterface, BookType, BookActionsTypes } from 'src/interfaces/book';
 
 interface BookState {
-  loading: boolean;
+  bookLoading: boolean;
   books: BookInterface[];
-  error?: boolean;
+  booksError?: boolean;
 }
 
 const initalState: BookState = {
-  books: [],
-  loading: false,
-  error: false
+  books: BOOKS_MOCK,
+  bookLoading: false,
+  booksError: false
 };
 
 export const bookListReducer = (state: BookState = initalState, action: BookActionsTypes): BookState => {
   switch (action.type) {
-    case BookType.BOOK_LIST_REQUEST:
-      return { loading: true, books: [] };
-    case BookType.BOOK_LIST_SUCCESS:
-      return { loading: false, books: action.payload };
-    case BookType.BOOK_LIST_FAIL:
-      return { ...state, loading: false, error: true };
+    case BookType.BOOK_LIST:
+      return { bookLoading: false, books: BOOKS_MOCK };
     default:
       return state;
   }

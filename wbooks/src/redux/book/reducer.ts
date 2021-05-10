@@ -1,5 +1,5 @@
 import { BOOKS_MOCK } from '@constants/mockBooks';
-import { BookInterface, BookType, BookActionsTypes } from 'src/interfaces/book';
+import { BookInterface, BookType, BookActionsTypes } from '@interfaces/book';
 
 interface BookState {
   bookLoading: boolean;

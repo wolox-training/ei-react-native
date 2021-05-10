@@ -14,6 +14,7 @@ import {
   HOME_OPTIONS,
   STACK_NAVIGATOR_OPTIONS
 } from '@constants/screenOptions';
+import { NavigationContainer } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -36,16 +37,18 @@ const renderTab = (focused: boolean, name: string, key: string): ReactElement =>
 
 export default function TabNavigator() {
   return (
-    <Tab.Navigator
-      initialRouteName={Routes.Home}
-      tabBarOptions={TAB_BAR_OPTIONS}
-      screenOptions={({ route: { name, key } }) => ({
-        tabBarIcon: ({ focused }) => renderTab(focused, name, key)
-      })}>
-      <Tab.Screen name={Routes.Home} component={LibraryStack} />
-      <Tab.Screen name={Routes.WishList} component={WishList} />
-      <Tab.Screen name={Routes.Suggest} component={Suggest} />
-      <Tab.Screen name={Routes.Rentals} component={Rentals} />
-    </Tab.Navigator>
+    <NavigationContainer>
+      <Tab.Navigator
+        initialRouteName={Routes.Home}
+        tabBarOptions={TAB_BAR_OPTIONS}
+        screenOptions={({ route: { name, key } }) => ({
+          tabBarIcon: ({ focused }) => renderTab(focused, name, key)
+        })}>
+        <Tab.Screen name={Routes.Home} component={LibraryStack} />
+        <Tab.Screen name={Routes.WishList} component={WishList} />
+        <Tab.Screen name={Routes.Suggest} component={Suggest} />
+        <Tab.Screen name={Routes.Rentals} component={Rentals} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }

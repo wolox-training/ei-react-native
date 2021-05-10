@@ -1,5 +1,5 @@
 if (__DEV__) {
-  import('./ReactotronConfig').then(() => console.log('Reactotron Configured'));
+  import('./src/config/ReactotronConfig').then(() => console.log('Reactotron Configured'));
 }
 import Reactotron from 'reactotron-react-native';
 import React from 'react';

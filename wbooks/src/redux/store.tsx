@@ -1,8 +1,8 @@
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, createStore, compose } from 'redux';
+import { fetchMiddleware } from 'redux-recompose';
 import thunk from 'redux-thunk';
 
-import { bookListReducer } from './book/reducer';
+import BookListReducer from './book/reducer';
 
-const enhancer = [applyMiddleware(thunk)];
-
-export const store = createStore(bookListReducer, ...enhancer);
+const enhancer = [applyMiddleware(thunk, fetchMiddleware)];
+export const store = createStore(BookListReducer, compose(...enhancer));

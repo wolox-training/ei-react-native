@@ -64,7 +64,7 @@
       "@config/*":["src/config/*"],
       "@hooks/*":["src/app/hooks/*"],
       "@interfaces/*":["src/interfaces/*"],
-      "@services":["src/services/*"],
+      "@services/*":["src/services/*"],
       "@utils":["src/utils"],
       "@navigator":["src/app/navigator"],
       "@redux/*":["src/redux/*"]

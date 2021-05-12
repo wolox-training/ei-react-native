@@ -1,6 +1,8 @@
-import { createStore } from 'redux';
-import Reactotron from '@config/ReactotronConfig';
+import { applyMiddleware, createStore } from 'redux';
+import thunk from 'redux-thunk';
 
 import { bookListReducer } from './book/reducer';
 
-export const store = createStore(bookListReducer, Reactotron.createEnhancer());
+const enhancer = [applyMiddleware(thunk)];
+
+export const store = createStore(bookListReducer, ...enhancer);

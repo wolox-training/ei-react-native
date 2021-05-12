@@ -10,21 +10,22 @@ export interface BookInterface {
 export interface BookPromise {
   data: BookInterface[];
   ok: boolean;
+  problem?: string | null;
 }
 
 export interface BookState {
   bookLoading: boolean;
   books: BookInterface[];
-  booksError?: string;
+  booksError?: string | null;
 }
 
 export enum BookType {
-  BOOK_LIST = 'BOOK_LIST',
-  BOOK_LIST_SUCCESS = 'BOOK_LIST_SUCCESS',
+  GET_BOOKS = 'BOOK_LIST',
+  GET_BOOKS_SUCCESS = 'BOOK_LIST_SUCCESS',
   BOOK_LIST_ERROR = 'BOOK_LIST_ERROR'
 }
 
 export type BookActionsTypes =
-  | { type: BookType.BOOK_LIST }
-  | { type: BookType.BOOK_LIST_SUCCESS; payload: BookInterface[] }
-  | { type: BookType.BOOK_LIST_ERROR; booksError: string };
+  | { type: BookType.GET_BOOKS }
+  | { type: BookType.GET_BOOKS_SUCCESS; payload: BookInterface[] }
+  | { type: BookType.BOOK_LIST_ERROR; payload: string };

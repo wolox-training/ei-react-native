@@ -1,42 +1,22 @@
-import { BOOKS_MOCK } from '@constants/mockBooks';
-import { BookActionsTypes, BookInterface, BookState, BookType, BookPromise } from '@interfaces/book';
 import { Action, Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
+import { BookInterface, BookState } from '@interfaces/book';
+import { fakeApiTimeOut } from '@services/book';
 
-const CUSTOM_LIBRARY_ERROR = "Can't load books now, try later";
+export const actions = {
+  GET_BOOKS: '@@BOOKS/GET_BOOKS',
+  GET_BOOKS_SUCCESS: '@@BOOKS/GET_BOOKS_SUCCESS',
+  GET_BOOKS_FAILURE: '@@BOOKS/GET_BOOKS_FAILURE'
+} as const;
 
-const getBooks = (): BookActionsTypes => ({
-  type: BookType.BOOK_LIST
-});
-
-const setBooks = (books: BookInterface[]): BookActionsTypes => ({
-  type: BookType.BOOK_LIST_SUCCESS,
-  payload: books
-});
-
-const setBookError = (booksError: string): BookActionsTypes => ({
-  type: BookType.BOOK_LIST_ERROR,
-  booksError
-});
-
-const fakeApiTimeOut = () => {
-  return new Promise<BookPromise>((resolve, reject) => {
-    setTimeout(() => {
-      const response = { ok: true, data: BOOKS_MOCK };
-      resolve(response);
-      const error = { ok: false, data: [] };
-      reject(error);
-    }, 300);
-  });
-};
-
-export const actionCreator = {
+const actionCreator = {
   getBooksList: (): ThunkAction<void, BookState, unknown, Action<BookInterface>> => async (
     dispatch: Dispatch
   ) => {
-    dispatch(getBooks());
-    const { data, ok } = await fakeApiTimeOut();
-    if (ok) dispatch(setBooks(data));
-    else dispatch(setBookError(CUSTOM_LIBRARY_ERROR));
+    dispatch({ type: actions.GET_BOOKS });
+    const response = await fakeApiTimeOut();
+    if (response.ok) dispatch({ type: actions.GET_BOOKS_SUCCESS, payload: response.data });
+    else dispatch({ type: actions.GET_BOOKS_FAILURE, payload: response.problem });
   }
 };
+export default actionCreator;

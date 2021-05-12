@@ -7,11 +7,6 @@ export interface BookInterface {
   year: string;
   imageUrl: string | null;
 }
-export interface BookPromise {
-  data: BookInterface[];
-  ok: boolean;
-  problem?: string | null;
-}
 
 export interface BookState {
   bookLoading: boolean;

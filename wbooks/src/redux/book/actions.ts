@@ -1,7 +1,7 @@
 import { Action, Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 import { BookInterface, BookState } from '@interfaces/book';
-import { fakeApiTimeOut } from '@services/book';
+import { getBooks } from '@services/book';
 
 export const actions = {
   GET_BOOKS: '@@BOOKS/GET_BOOKS',
@@ -14,7 +14,7 @@ const actionCreator = {
     dispatch: Dispatch
   ) => {
     dispatch({ type: actions.GET_BOOKS });
-    const response = await fakeApiTimeOut();
+    const response = await getBooks();
     if (response.ok) dispatch({ type: actions.GET_BOOKS_SUCCESS, payload: response.data });
     else dispatch({ type: actions.GET_BOOKS_FAILURE, payload: response.problem });
   }

@@ -1,17 +1,17 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useEffect } from 'react';
 import { FlatList, ListRenderItem } from 'react-native';
-import { BOOKS_MOCK } from '@constants/mockBooks';
 import CardBook from '@components/CardBook';
-
-interface BookInterface {
-  author: string;
-  imageUrl: string | null;
-  title: string;
-  id: number;
-}
+import { useDispatch, useSelector } from 'react-redux';
+import { BookListInterface, BookState } from '@interfaces/book';
+import actionCreator from '@redux/book/actions';
 
 export default function BookList(): ReactElement {
-  const renderBookList: ListRenderItem<BookInterface> = ({ item: { author, imageUrl, title, id } }) => (
+  const dispatch = useDispatch();
+  const bookList = useSelector((state: BookState) => state.books);
+  useEffect(() => {
+    dispatch(actionCreator.getBooksList());
+  }, [dispatch]);
+  const renderBookList: ListRenderItem<BookListInterface> = ({ item: { author, imageUrl, title, id } }) => (
     <CardBook author={author} image={imageUrl} title={title} id={id} />
   );
 
@@ -19,7 +19,7 @@ export default function BookList(): ReactElement {
 
   return (
     <FlatList
-      data={BOOKS_MOCK}
+      data={bookList}
       renderItem={renderBookList}
       showsVerticalScrollIndicator={false}
       keyExtractor={keyExtractorBook}

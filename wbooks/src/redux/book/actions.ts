@@ -1,22 +1,15 @@
-import { Action, Dispatch } from 'redux';
-import { ThunkAction } from 'redux-thunk';
-import { BookInterface, BookState } from '@interfaces/book';
-import { getBooks } from '@services/book';
+import bookService from '@services/book';
+import { createTypes, completeTypes } from 'redux-recompose';
 
-export const actions = {
-  GET_BOOKS: '@@BOOKS/GET_BOOKS',
-  GET_BOOKS_SUCCESS: '@@BOOKS/GET_BOOKS_SUCCESS',
-  GET_BOOKS_FAILURE: '@@BOOKS/GET_BOOKS_FAILURE'
-} as const;
+export const TARGETS = { BOOKS: 'books' };
+
+export const actions = createTypes(completeTypes({ primaryActions: ['GET_BOOKS'] }), '@@BOOKS');
 
 const actionCreator = {
-  getBooksList: (): ThunkAction<void, BookState, unknown, Action<BookInterface>> => async (
-    dispatch: Dispatch
-  ) => {
-    dispatch({ type: actions.GET_BOOKS });
-    const response = await getBooks();
-    if (response.ok) dispatch({ type: actions.GET_BOOKS_SUCCESS, payload: response.data });
-    else dispatch({ type: actions.GET_BOOKS_FAILURE, payload: response.problem });
-  }
+  getBooksList: () => ({
+    type: actions.GET_BOOKS,
+    target: TARGETS.BOOKS,
+    service: bookService.getBooks
+  })
 };
 export default actionCreator;

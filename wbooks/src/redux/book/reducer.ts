@@ -5,9 +5,7 @@ import { actions } from './actions';
 
 const initalState: BookState = completeState({
   description: {
-    books: [],
-    bookLoading: false,
-    booksError: null
+    books: []
   }
 });
 

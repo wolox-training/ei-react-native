@@ -1,8 +1,13 @@
 import { BOOKS_MOCK } from '@constants/mockBooks';
+import { BookPromise } from '@interfaces/book';
 
-export const getBooks = () =>
-  new Promise<any>(resolve =>
-    setTimeout(() => {
-      resolve({ ok: true, data: BOOKS_MOCK });
-    }, 1000)
-  );
+function promiseGetBook() {
+  return new Promise<BookPromise>(resolve => {
+    setTimeout(() => resolve({ ok: true, data: BOOKS_MOCK }), 1000);
+  });
+}
+
+const bookService = {
+  getBooks: () => promiseGetBook()
+};
+export default bookService;

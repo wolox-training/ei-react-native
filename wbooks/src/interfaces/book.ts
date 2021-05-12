@@ -7,11 +7,22 @@ export interface BookInterface {
   year: string;
   imageUrl: string | null;
 }
-
+export interface BookListInterface {
+  author: string;
+  imageUrl: string | null;
+  title: string;
+  id: number;
+}
 export interface BookState {
   bookLoading: boolean;
   books: BookInterface[];
   booksError?: string | null;
+}
+
+export interface BookPromise {
+  data: BookInterface[];
+  ok: boolean;
+  problem?: string | null;
 }
 
 export enum BookType {

@@ -19,7 +19,8 @@ module.exports = {
           '@services': './src/services',
           '@utils': './src/utils',
           '@navigator': './src/app/navigator',
-          '@redux': './src/redux'
+          '@redux': './src/redux',
+          '@reduxtest': '../../../src/redux/'
         }
       }
     ]

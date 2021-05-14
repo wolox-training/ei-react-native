@@ -1,8 +1,7 @@
-import { BOOKS_MOCK } from '@constants/mockBooks';
-import { BookInterface } from '@interfaces/book';
-
-import BookListReducer, { initialState } from './reducer';
-import { actions, TARGETS } from './actions';
+import { BOOKS_MOCK } from '../../../src/constants/mockBooks';
+import { BookInterface } from '../../../src/interfaces/book';
+import BookListReducer, { initialState } from '../../../src/redux/book/reducer';
+import { actions, TARGETS } from '../../../src/redux/book/actions';
 
 const MOCKED_TEST = BOOKS_MOCK[0];
 const books: BookInterface[] = [MOCKED_TEST];

@@ -2,8 +2,8 @@ import { fetchMiddleware } from 'redux-recompose';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import { initialState } from './reducer';
-import actionCreator, { actions, TARGETS } from './actions';
+import { initialState } from '../../../src/redux/book/reducer';
+import actionCreator, { actions, TARGETS } from '../../../src/redux/book/actions';
 
 const middlewares = [thunk, fetchMiddleware];
 const mockStore = configureStore(middlewares);

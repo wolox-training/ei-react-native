@@ -16,20 +16,32 @@ const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 const store = mockStore(books);
 
-const renderCardBook = () => (
-  <CardBook author={books.author} title={books.title} image={books.imageUrl} id={books.id} key={books.id} />
-);
+const RenderCustoms = {
+  renderCardBook: () => (
+    <CardBook author={books.author} title={books.title} image={books.imageUrl} id={books.id} key={books.id} />
+  ),
+  renderCompleteCardBook: () => (
+    <Provider store={store}>
+      <MockedNavigator component={RenderCustoms.renderCardBook} />
+    </Provider>
+  )
+};
+
 describe('cardBookTest', () => {
   test('get CardBook Snapshost ', () => {
-    const { toJSON, getByText } = render(
-      <Provider store={store}>
-        <MockedNavigator component={renderCardBook} />
-      </Provider>
-    );
+    const { toJSON } = render(RenderCustoms.renderCompleteCardBook());
     expect(toJSON()).toMatchSnapshot();
+  });
+  test('pass all props they not was a null', () => {
+    const { getByText } = render(RenderCustoms.renderCompleteCardBook());
     expect(getByText(books.title)).toBeDefined();
     expect(getByText(books.author)).toBeDefined();
     expect(getByText(books.title)).not.toBeNull();
     expect(getByText(books.author)).not.toBeNull();
+  });
+  test('Pass null props', () => {
+    const { queryByText } = render(RenderCustoms.renderCompleteCardBook());
+    expect(queryByText(books.genre)).toBeNull();
+    expect(queryByText(books.year)).toBeNull();
   });
 });

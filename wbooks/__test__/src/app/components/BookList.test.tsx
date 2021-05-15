@@ -6,7 +6,7 @@ import { render } from '@testing-library/react-native';
 
 import { BOOKS_MOCK } from '../../../../src/constants/mockBooks';
 import { BookInterface } from '../../../../src/interfaces/book';
-import BookList from '../../../../src/app/components/Booklist/index';
+import BookList from '../../../../src/app/components/BookList';
 
 const MOCKED_TEST = BOOKS_MOCK[0];
 const books: BookInterface = MOCKED_TEST;

@@ -32,14 +32,14 @@ describe('cardBookTest', () => {
     const { toJSON } = render(RenderCustoms.renderCompleteCardBook());
     expect(toJSON()).toMatchSnapshot();
   });
-  test('pass all props they not was a null', () => {
+  test("all props weren't a null", () => {
     const { getByText } = render(RenderCustoms.renderCompleteCardBook());
     expect(getByText(books.title)).toBeDefined();
     expect(getByText(books.author)).toBeDefined();
     expect(getByText(books.title)).not.toBeNull();
     expect(getByText(books.author)).not.toBeNull();
   });
-  test('Pass null props', () => {
+  test('some props were a null', () => {
     const { queryByText } = render(RenderCustoms.renderCompleteCardBook());
     expect(queryByText(books.genre)).toBeNull();
     expect(queryByText(books.year)).toBeNull();

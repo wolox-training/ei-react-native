@@ -4,6 +4,7 @@ import { SafeAreaView, ScrollView, Pressable, Image, View, Text } from 'react-na
 import { Mockposts } from '@constants/mockposts';
 import Routes from '@constants/routes';
 import { SharedElement } from 'react-navigation-shared-element';
+import { Post } from '@interfaces/posts';
 
 import styles from './styles';
 
@@ -12,15 +13,13 @@ export default function Gallery() {
   const GREAT_PHOTOS = 'Great Photos';
 
   function renderMockPosts() {
+    const handlePress = (post: Post) => {
+      navigation.navigate(Routes.DetailPost, {
+        post
+      });
+    };
     return Mockposts.map(post => (
-      <Pressable
-        key={post.id}
-        onPress={() =>
-          navigation.navigate(Routes.DetailPost, {
-            post
-          })
-        }
-        style={styles.presseableImage}>
+      <Pressable key={post.id} onPress={() => handlePress(post)} style={styles.presseableImage}>
         <SharedElement id={post.id}>
           <Image source={{ uri: post.source }} style={styles.image} resizeMethod="scale" resizeMode="cover" />
         </SharedElement>

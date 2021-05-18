@@ -34,10 +34,14 @@ export default function DetailPost({ route, navigation }: Props) {
     }).start();
   }, [opacity]);
 
+  const handlePress = () => {
+    navigation.goBack();
+  };
+
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={styles.wrapper}>
       <Animated.View style={[styles.container, customStyles]}>
-        <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
+        <TouchableWithoutFeedback onPress={handlePress}>
           <Image style={styles.icon} resizeMethod="resize" resizeMode="contain" source={IC_BACK} />
         </TouchableWithoutFeedback>
       </Animated.View>

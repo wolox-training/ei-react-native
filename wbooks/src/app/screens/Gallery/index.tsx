@@ -1,9 +1,9 @@
-import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { SafeAreaView, ScrollView, Pressable, Image, View, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { SharedElement } from 'react-navigation-shared-element';
 import { Mockposts } from '@constants/mockposts';
 import Routes from '@constants/routes';
-import { SharedElement } from 'react-navigation-shared-element';
 import { Post } from '@interfaces/posts';
 
 import styles from './styles';

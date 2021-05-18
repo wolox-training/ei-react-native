@@ -1,6 +1,5 @@
+import { StyleSheet } from 'react-native';
 import { cyan, white } from '@constants/colors';
-
-const { StyleSheet } = require('react-native');
 
 const BOLD = 'bold';
 const ONEHUNDRERPERCENT = '100%';

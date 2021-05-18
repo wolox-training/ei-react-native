@@ -1,6 +1,7 @@
 const { StyleSheet } = require('react-native');
 
 const FONT_BOLD = 'bold';
+const FIFTEEN = 15;
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -10,7 +11,7 @@ const styles = StyleSheet.create({
     marginTop: 34,
     fontSize: 28,
     fontWeight: FONT_BOLD,
-    margin: 15
+    margin: FIFTEEN
   },
   posts: {
     flex: 1,
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
   },
   postTexts: {
     margin: 10,
-    marginBottom: 15
+    marginBottom: FIFTEEN
   },
   postHeader: {
     fontWeight: FONT_BOLD

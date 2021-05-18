@@ -3,6 +3,8 @@ enum Routes {
   Home = 'Library',
   WishList = 'WishList',
   Suggest = 'Suggest',
-  Rentals = 'Rentals'
+  Rentals = 'Rentals',
+  Gallery = 'Gallery',
+  DetailPost = 'DetailPost'
 }
 export default Routes;

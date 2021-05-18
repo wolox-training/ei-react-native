@@ -12,12 +12,17 @@ import {
   TAB_BAR_OPTIONS,
   DETAIL_BOOK_OPTIONS,
   HOME_OPTIONS,
-  STACK_NAVIGATOR_OPTIONS
+  STACK_NAVIGATOR_OPTIONS,
+  SHARED_NAVIGATOR_OPTIONS
 } from '@constants/screenOptions';
 import { NavigationContainer } from '@react-navigation/native';
+import Gallery from '@screens/Gallery';
+import DetailPost from '@screens/DetailPost';
+import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+const Shared = createSharedElementStackNavigator();
 
 function LibraryStack(): ReactElement {
   return (
@@ -28,6 +33,20 @@ function LibraryStack(): ReactElement {
       <Stack.Screen name={Routes.Home} component={Library} options={HOME_OPTIONS} />
       <Stack.Screen name={Routes.DetailBook} component={DetailBook} options={DETAIL_BOOK_OPTIONS} />
     </Stack.Navigator>
+  );
+}
+function SharedStack() {
+  return (
+    <Shared.Navigator mode="modal" screenOptions={SHARED_NAVIGATOR_OPTIONS}>
+      <Shared.Screen name={Routes.Gallery} component={Gallery} />
+      <Shared.Screen
+        name={Routes.DetailPost}
+        component={DetailPost}
+        sharedElementsConfig={route => {
+          return [route.params.post.id];
+        }}
+      />
+    </Shared.Navigator>
   );
 }
 
@@ -48,6 +67,7 @@ export default function TabNavigator() {
         <Tab.Screen name={Routes.WishList} component={WishList} />
         <Tab.Screen name={Routes.Suggest} component={Suggest} />
         <Tab.Screen name={Routes.Rentals} component={Rentals} />
+        <Tab.Screen name={Routes.Gallery} component={SharedStack} />
       </Tab.Navigator>
     </NavigationContainer>
   );

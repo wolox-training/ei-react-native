@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { cyan, white } from '@constants/colors';
 
 const TITLE_WEIGHT = 'bold';
-const FONTSIZE_CUSTOM_TITLE = 24;
+const TITLE_FONTSIZE = 24;
 
 const AVATAR_SIZE = 60;
 const styles = StyleSheet.create({
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   postTitle: {
-    fontSize: FONTSIZE_CUSTOM_TITLE,
+    fontSize: TITLE_FONTSIZE,
     marginTop: 10,
     fontWeight: TITLE_WEIGHT
   },
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 40
   },
   postContactText: {
-    fontSize: FONTSIZE_CUSTOM_TITLE,
+    fontSize: TITLE_FONTSIZE,
     color: white,
     fontWeight: TITLE_WEIGHT,
     textAlign: 'center'

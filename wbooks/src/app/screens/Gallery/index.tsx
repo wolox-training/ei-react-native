@@ -13,16 +13,13 @@ export default function Gallery() {
   const GREAT_PHOTOS = 'Great Photos';
 
   function renderMockPosts() {
-    const handlePress = (id: string, source: string, avatar: string, user: string) => {
+    const handlePress = (id: string, source: string, avatar: string, user: string) => () => {
       navigation.navigate(Routes.DetailPost, {
         post: { id, source, avatar, user }
       });
     };
     return Mockposts.map(({ id, source, avatar, user }: Post) => (
-      <Pressable
-        key={id}
-        onPress={() => handlePress(id, source, avatar, user)}
-        style={styles.presseableImage}>
+      <Pressable key={id} onPress={handlePress(id, source, avatar, user)} style={styles.presseableImage}>
         <SharedElement id={id}>
           <Image source={{ uri: source }} style={styles.image} resizeMethod="scale" resizeMode="cover" />
         </SharedElement>

@@ -7,12 +7,8 @@ export interface Post {
   avatar: string;
   video?: string;
 }
-type RootStackParamList = {
-  Gallery: Routes.Gallery;
-  DetailPost: Routes.DetailPost;
-};
 
 export type PostsRoutes = {
-  routes: RootStackParamList;
+  routes: Routes;
   postData: { post: Post };
 };

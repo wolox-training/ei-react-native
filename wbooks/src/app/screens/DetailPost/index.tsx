@@ -1,15 +1,14 @@
 import React, { useRef, useEffect } from 'react';
 import { View, Image, Text, Animated, TouchableWithoutFeedback, ScrollView } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { NavigationProp } from '@react-navigation/native';
+import { NavigationProp, ParamListBase } from '@react-navigation/native';
 import { SharedElement } from 'react-navigation-shared-element';
 import IC_BACK from '@assets/General/ic_back.png';
-import { PostsRoutes } from '@interfaces/posts';
 
 import styles from './styles';
 
 interface Props {
-  navigation: NavigationProp<PostsRoutes, 'postData'>;
+  navigation: NavigationProp<ParamListBase, 'postData'>;
   route: {
     params: {
       post: {

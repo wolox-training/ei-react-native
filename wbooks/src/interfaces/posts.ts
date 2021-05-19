@@ -1,3 +1,5 @@
+import Routes from '@constants/routes';
+
 export interface Post {
   id: string;
   source: string;
@@ -5,8 +7,12 @@ export interface Post {
   avatar: string;
   video?: string;
 }
+type RootStackParamList = {
+  Gallery: Routes.Gallery;
+  DetailPost: Routes.DetailPost;
+};
 
 export type PostsRoutes = {
-  routes: undefined;
-  post: { post: Post };
+  routes: RootStackParamList;
+  postData: { post: Post };
 };

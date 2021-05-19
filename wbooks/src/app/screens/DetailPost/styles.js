@@ -1,69 +1,63 @@
 import { StyleSheet } from 'react-native';
 import { cyan, white } from '@constants/colors';
 
-const BOLD = 'bold';
-const ONEHUNDRERPERCENT = '100%';
-const CENTER = 'center';
-const ROW = 'row';
+const TITLE_WEIGHT = 'bold';
+const FONTSIZE_CUSTOM_TITLE = 24;
 
-const ONE = 1;
-const TEN = 10;
-const SIXTY = 60;
-const TWENTYFOUR = 24;
-const TWENTYFIVE = 25;
+const AVATAR_SIZE = 60;
 const styles = StyleSheet.create({
   wrapper: {
-    flex: ONE
+    flex: 1
   },
   container: {
     position: 'absolute',
-    zIndex: ONE,
-    flexDirection: ROW,
+    zIndex: 1,
+    flexDirection: 'row',
     justifyContent: 'space-between'
   },
   icon: {
-    height: TWENTYFIVE,
+    height: 25,
     width: 15
   },
   postImage: {
     height: 600,
-    width: ONEHUNDRERPERCENT
+    width: '100%'
   },
   postTitle: {
-    fontSize: TWENTYFOUR,
-    marginTop: TEN,
-    fontWeight: BOLD
+    fontSize: FONTSIZE_CUSTOM_TITLE,
+    marginTop: 10,
+    fontWeight: TITLE_WEIGHT
   },
   postContactButton: {
     marginVertical: 26,
-    padding: TEN,
+    padding: 10,
     backgroundColor: cyan,
     borderRadius: 20,
-    elevation: TEN,
+    elevation: 10,
     marginHorizontal: 40
   },
   postContactText: {
-    fontSize: TWENTYFOUR,
+    fontSize: FONTSIZE_CUSTOM_TITLE,
     color: white,
-    fontWeight: BOLD,
-    textAlign: CENTER
+    fontWeight: TITLE_WEIGHT,
+    textAlign: 'center'
   },
   imageContainer: {
     borderRadius: 1000,
     overflow: 'hidden',
-    height: SIXTY,
-    width: SIXTY
+    height: AVATAR_SIZE,
+    width: AVATAR_SIZE
   },
   image: {
-    height: ONEHUNDRERPERCENT,
-    width: ONEHUNDRERPERCENT
+    height: '100%',
+    width: '100%'
   },
   descriptionPostContainer: {
-    width: ONEHUNDRERPERCENT,
-    flexDirection: ROW,
+    width: '100%',
+    flexDirection: 'row',
     justifyContent: 'space-around',
-    alignItems: CENTER,
-    marginTop: TWENTYFIVE
+    alignItems: 'center',
+    marginTop: 25
   }
 });
 export default styles;

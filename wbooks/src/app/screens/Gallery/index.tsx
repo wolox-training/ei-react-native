@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, Pressable, Image, View, Text } from 'react-native';
+import { ScrollView, Pressable, Image, View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { SharedElement } from 'react-navigation-shared-element';
 import { Mockposts } from '@constants/mockposts';
@@ -13,19 +13,22 @@ export default function Gallery() {
   const GREAT_PHOTOS = 'Great Photos';
 
   function renderMockPosts() {
-    const handlePress = (post: Post) => {
+    const handlePress = (id: string, source: string, avatar: string, user: string) => {
       navigation.navigate(Routes.DetailPost, {
-        post
+        post: { id, source, avatar, user }
       });
     };
-    return Mockposts.map(post => (
-      <Pressable key={post.id} onPress={() => handlePress(post)} style={styles.presseableImage}>
-        <SharedElement id={post.id}>
-          <Image source={{ uri: post.source }} style={styles.image} resizeMethod="scale" resizeMode="cover" />
+    return Mockposts.map(({ id, source, avatar, user }: Post) => (
+      <Pressable
+        key={id}
+        onPress={() => handlePress(id, source, avatar, user)}
+        style={styles.presseableImage}>
+        <SharedElement id={id}>
+          <Image source={{ uri: source }} style={styles.image} resizeMethod="scale" resizeMode="cover" />
         </SharedElement>
         <View style={styles.postTexts}>
           <Text numberOfLines={1} style={styles.postHeader}>
-            {post.user}
+            {user}
           </Text>
         </View>
       </Pressable>
@@ -33,11 +36,9 @@ export default function Gallery() {
   }
 
   return (
-    <SafeAreaView style={styles.wrapper}>
-      <ScrollView style={styles.wrapper} showsHorizontalScrollIndicator={false}>
-        <Text style={styles.listHeader}>{GREAT_PHOTOS}</Text>
-        <View style={styles.posts}>{renderMockPosts()}</View>
-      </ScrollView>
-    </SafeAreaView>
+    <ScrollView style={styles.wrapper} showsHorizontalScrollIndicator={false}>
+      <Text style={styles.listHeader}>{GREAT_PHOTOS}</Text>
+      <View style={styles.posts}>{renderMockPosts()}</View>
+    </ScrollView>
   );
 }

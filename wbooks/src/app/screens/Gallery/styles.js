@@ -1,7 +1,6 @@
-const { StyleSheet } = require('react-native');
+import { StyleSheet } from 'react-native';
 
-const FONT_BOLD = 'bold';
-const FIFTEEN = 15;
+const TITLE_WEIGHT = 'bold';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -10,8 +9,8 @@ const styles = StyleSheet.create({
   listHeader: {
     marginTop: 34,
     fontSize: 28,
-    fontWeight: FONT_BOLD,
-    margin: FIFTEEN
+    fontWeight: TITLE_WEIGHT,
+    margin: 15
   },
   posts: {
     flex: 1,
@@ -20,10 +19,10 @@ const styles = StyleSheet.create({
   },
   postTexts: {
     margin: 10,
-    marginBottom: FIFTEEN
+    marginBottom: 15
   },
   postHeader: {
-    fontWeight: FONT_BOLD
+    fontWeight: TITLE_WEIGHT
   },
   image: {
     height: 380

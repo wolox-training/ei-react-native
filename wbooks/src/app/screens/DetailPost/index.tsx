@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { View, Image, Text, Animated, TouchableWithoutFeedback, ScrollView } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { NavigationProp, RouteProp } from '@react-navigation/native';
+import { NavigationProp } from '@react-navigation/native';
 import { SharedElement } from 'react-navigation-shared-element';
 import IC_BACK from '@assets/General/ic_back.png';
 import { PostsRoutes } from '@interfaces/posts';
@@ -9,8 +9,17 @@ import { PostsRoutes } from '@interfaces/posts';
 import styles from './styles';
 
 interface Props {
-  navigation: NavigationProp<PostsRoutes, 'post'>;
-  route: RouteProp<PostsRoutes, 'post'>;
+  navigation: NavigationProp<PostsRoutes, 'postData'>;
+  route: {
+    params: {
+      post: {
+        id: string;
+        avatar: string;
+        user: string;
+        source: string;
+      };
+    };
+  };
 }
 export default function DetailPost({
   route: {

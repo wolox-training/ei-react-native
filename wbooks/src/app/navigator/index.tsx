@@ -1,13 +1,17 @@
 import React, { ReactElement } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import Routes from '@constants/routes';
+import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
+import Library from '@screens/Library';
+import DetailBook from '@screens/DetailBook';
+import Gallery from '@screens/Gallery';
+import DetailPost from '@screens/DetailPost';
 import WishList from '@screens/WishList';
 import Suggest from '@screens/Suggest';
 import Rentals from '@screens/Rentals';
 import TabBar from '@components/TabBar';
-import Library from '@screens/Library';
-import DetailBook from '@screens/DetailBook';
+import Routes from '@constants/routes';
 import {
   TAB_BAR_OPTIONS,
   DETAIL_BOOK_OPTIONS,
@@ -15,10 +19,6 @@ import {
   STACK_NAVIGATOR_OPTIONS,
   SHARED_NAVIGATOR_OPTIONS
 } from '@constants/screenOptions';
-import Gallery from '@screens/Gallery';
-import DetailPost from '@screens/DetailPost';
-import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
-import { NavigationContainer } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();

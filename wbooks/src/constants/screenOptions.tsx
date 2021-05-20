@@ -42,3 +42,7 @@ export const STACK_NAVIGATOR_OPTIONS = {
 export const TAB_BAR_OPTIONS = {
   showLabel: false
 };
+export const SHARED_NAVIGATOR_OPTIONS = {
+  headerShown: false,
+  gestureEnabled: false
+};

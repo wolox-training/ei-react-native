@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 import Library from '@screens/Library';
 import DetailBook from '@screens/DetailBook';
+import SearchBook from '@screens/SearchBook';
 import Gallery from '@screens/Gallery';
 import DetailPost from '@screens/DetailPost';
 import WishList from '@screens/WishList';
@@ -17,7 +18,8 @@ import {
   DETAIL_BOOK_OPTIONS,
   HOME_OPTIONS,
   STACK_NAVIGATOR_OPTIONS,
-  SHARED_NAVIGATOR_OPTIONS
+  SHARED_NAVIGATOR_OPTIONS,
+  SEARCH_BOOK_OPTIONS
 } from '@constants/screenOptions';
 
 const Tab = createBottomTabNavigator();
@@ -32,6 +34,7 @@ function LibraryStack(): ReactElement {
       initialRouteName={Routes.Home}>
       <Stack.Screen name={Routes.Home} component={Library} options={HOME_OPTIONS} />
       <Stack.Screen name={Routes.DetailBook} component={DetailBook} options={DETAIL_BOOK_OPTIONS} />
+      <Stack.Screen name={Routes.SearchBook} component={SearchBook} options={SEARCH_BOOK_OPTIONS} />
     </Stack.Navigator>
   );
 }

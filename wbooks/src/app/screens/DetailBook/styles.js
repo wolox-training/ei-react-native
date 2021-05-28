@@ -45,7 +45,8 @@ export const styles = StyleSheet.create({
   },
   btnTxt: {
     color: white,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    textAlign: 'center'
   }
 });
 

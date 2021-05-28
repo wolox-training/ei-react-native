@@ -5,7 +5,6 @@ import actionCreator from '@redux/book/actions';
 
 export default function useFilterBook() {
   const dispatch = useDispatch();
-  //   const books = useSelector((state: BookState) => state.books);
   const { books, searchBook } = useSelector((state: BookState) => state);
   useEffect(() => {
     dispatch(actionCreator.getBooksList());

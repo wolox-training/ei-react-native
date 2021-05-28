@@ -1,8 +1,8 @@
 import React from 'react';
-import { Image, ImageSourcePropType } from 'react-native';
+import { TouchableWithoutFeedback, Image, ImageSourcePropType } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Routes from '@constants/routes';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import {} from 'react-native-gesture-handler';
 
 import styles from './styles';
 

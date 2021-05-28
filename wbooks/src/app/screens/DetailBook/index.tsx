@@ -1,9 +1,13 @@
-import React, { ReactElement } from 'react';
-import { Image, Text, View } from 'react-native';
+import React, { ReactElement, useRef, useState } from 'react';
+import { Image, Text, View, Animated, Pressable } from 'react-native';
 import notImageFound from '@assets/General/not_image_found.png';
+import { cyan, green } from '@constants/colors';
 
 import styles from './styles';
 
+const ADD_WISH = 'Add to whislist';
+const CHECK = '✅';
+const EMPTY = '';
 interface Props {
   route: {
     params: {
@@ -20,6 +24,45 @@ export default function DetailBook({
     params: { author, title, image }
   }
 }: Props): ReactElement {
+  const [textBtn, setTextBtn] = useState(ADD_WISH);
+  const borderRadius = useRef(new Animated.Value(10)).current;
+  const animationColor = useRef(new Animated.Value(0)).current;
+  const scale = useRef(new Animated.Value(1.1)).current;
+  const boxInterpolation = animationColor.interpolate({
+    inputRange: [0, 1],
+    outputRange: [cyan, green]
+  });
+
+  const animatedStyleBtn = {
+    backgroundColor: boxInterpolation,
+    borderRadius,
+    transform: [
+      {
+        scale
+      }
+    ]
+  };
+  const handlePressAnimation = () => {
+    setTextBtn(EMPTY);
+    Animated.parallel([
+      Animated.timing(borderRadius, {
+        toValue: 100,
+        duration: 2000,
+        useNativeDriver: false
+      }),
+      Animated.timing(scale, {
+        toValue: 0.9,
+        duration: 2000,
+        useNativeDriver: false
+      }),
+      Animated.timing(animationColor, {
+        toValue: 1,
+        duration: 2000,
+        useNativeDriver: false
+      })
+    ]).start(() => setTextBtn(CHECK));
+  };
+
   return (
     <View style={styles.container}>
       <Image
@@ -32,6 +75,11 @@ export default function DetailBook({
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.paragraph}>{author}</Text>
       </View>
+      <Pressable onPress={handlePressAnimation}>
+        <Animated.View style={[styles.btnRent, animatedStyleBtn]}>
+          <Animated.Text style={[styles.btnTxt]}>{textBtn}</Animated.Text>
+        </Animated.View>
+      </Pressable>
     </View>
   );
 }

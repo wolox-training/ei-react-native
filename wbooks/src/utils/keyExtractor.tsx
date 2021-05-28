@@ -1,2 +1,5 @@
-const keyExtractor = (item: { id: number }) => item.id.toString();
+type KeyProp = {
+  id: number;
+};
+const keyExtractor = ({ id }: KeyProp) => id.toString();
 export default keyExtractor;

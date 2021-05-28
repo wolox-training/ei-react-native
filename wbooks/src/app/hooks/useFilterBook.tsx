@@ -11,7 +11,7 @@ export default function useFilterBook() {
   }, [dispatch]);
 
   const filteredBooks: BookInterface[] = useMemo(() => {
-    return books.filter(x => x.title.toLowerCase().includes(searchBook?.toLowerCase()));
+    return books.filter(book => book.title.toLowerCase().includes(searchBook?.toLowerCase()));
   }, [books, searchBook]);
 
   return { searchBook, filteredBooks };

@@ -9,9 +9,10 @@ import styles from './styles';
 
 export default function SearchBook() {
   const { filteredBooks } = useFilterBook();
+  const renderAlert = () => filteredBooks.length < 1 && <NoneResult />;
   return (
     <>
-      {filteredBooks.length === 0 && <NoneResult />}
+      {renderAlert()}
       <FlatList
         style={styles.container}
         data={filteredBooks}

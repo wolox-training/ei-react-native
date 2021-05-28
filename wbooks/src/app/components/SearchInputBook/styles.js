@@ -1,8 +1,10 @@
 import { StyleSheet, Platform } from 'react-native';
 import { white } from '@constants/colors';
 
-const WIDTH_IOS = Platform.OS === 'ios' ? 300 : '100%';
-const MARGIN_LEFT_IOS = Platform.OS === 'ios' ? 10 : 0;
+const isIos = Platform.OS === 'ios';
+
+const WIDTH_IOS = isIos ? 300 : '100%';
+const MARGIN_LEFT_IOS = isIos ? 10 : 0;
 
 const styles = StyleSheet.create({
   textInput: {

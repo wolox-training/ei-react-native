@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { TextInput } from 'react-native';
 import actionCreator from '@redux/book/actions';
 import useFilterBook from '@hooks/useFilterBook';
+import { black } from '@constants/colors';
 
 import styles from './styles';
 
@@ -15,7 +16,7 @@ export default function SearchInputBook() {
     <TextInput
       style={styles.textInput}
       placeholder="Input a book"
-      placeholderTextColor="#323232"
+      placeholderTextColor={black}
       onChangeText={handleInput}
       value={searchBook}
     />

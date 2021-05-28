@@ -5,6 +5,7 @@ import { CardStyleInterpolators } from '@react-navigation/stack';
 import Header from '@components/Header';
 import BackArrowIcon from '@components/BackArrowIcon';
 import CustomIconHeader from '@components/CustomIconHeader';
+import SearchInputBook from '@components/SearchInputBook';
 import icSearch from '@assets/General/ic_search.png';
 import icNotification from '@assets/General/ic_notifications.png';
 
@@ -35,6 +36,14 @@ export const DETAIL_BOOK_OPTIONS = () => ({
     textTransform: TRANFORM_TEXT_UPPERCASE
   }
 });
+
+export const SEARCH_BOOK_OPTIONS = () => ({
+  headerStyle: HEADER_CUSTOM_STYLE,
+  headerBackground: () => <Header />,
+  headerTitle: () => <SearchInputBook />,
+  headerLeft: () => <BackArrowIcon />
+});
+
 export const STACK_NAVIGATOR_OPTIONS = {
   cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
 };

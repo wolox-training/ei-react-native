@@ -5,6 +5,7 @@ enum Routes {
   Suggest = 'Suggest',
   Rentals = 'Rentals',
   Gallery = 'Gallery',
-  DetailPost = 'DetailPost'
+  DetailPost = 'DetailPost',
+  SearchBook = 'SearchBook'
 }
 export default Routes;

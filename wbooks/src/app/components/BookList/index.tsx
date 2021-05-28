@@ -1,9 +1,10 @@
 import React, { ReactElement, useEffect } from 'react';
-import { FlatList, ListRenderItem } from 'react-native';
-import CardBook from '@components/CardBook';
+import { FlatList } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { BookListInterface, BookState } from '@interfaces/book';
+import { BookState } from '@interfaces/book';
 import actionCreator from '@redux/book/actions';
+import RenderBookList from '@components/RendererBookList';
+import keyExtractor from '@utils/keyExtractor';
 
 export default function BookList(): ReactElement {
   const dispatch = useDispatch();
@@ -11,18 +12,13 @@ export default function BookList(): ReactElement {
   useEffect(() => {
     dispatch(actionCreator.getBooksList());
   }, [dispatch]);
-  const renderBookList: ListRenderItem<BookListInterface> = ({ item: { author, imageUrl, title, id } }) => (
-    <CardBook author={author} image={imageUrl} title={title} id={id} />
-  );
-
-  const keyExtractorBook = (item: { id: number }) => item.id.toString();
 
   return (
     <FlatList
       data={bookList}
-      renderItem={renderBookList}
+      renderItem={RenderBookList}
       showsVerticalScrollIndicator={false}
-      keyExtractor={keyExtractorBook}
+      keyExtractor={keyExtractor}
     />
   );
 }

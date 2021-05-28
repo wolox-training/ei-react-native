@@ -12,9 +12,9 @@ interface Props {
 export default function CustomIconHeader({ icon }: Props) {
   const navigation = useNavigation();
 
-  const hanldePress = () => navigation.navigate(Routes.SearchBook);
+  const handlePress = () => navigation.navigate(Routes.SearchBook);
   return (
-    <TouchableWithoutFeedback onPress={hanldePress}>
+    <TouchableWithoutFeedback onPress={handlePress}>
       <Image source={icon} style={styles.image} resizeMethod="scale" resizeMode="contain" />
     </TouchableWithoutFeedback>
   );

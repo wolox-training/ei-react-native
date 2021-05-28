@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 
 import styles from './styles';
 
-export default function NoneResult() {
+export default function EmptySearch() {
   return (
     <View style={styles.container}>
       <Text>No Results</Text>

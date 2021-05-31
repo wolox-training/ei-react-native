@@ -4,10 +4,8 @@ import notImageFound from '@assets/General/not_image_found.png';
 import { cyan, green } from '@constants/colors';
 
 import styles from './styles';
+import { ADD_WISH, ANIMATE_DURATION, CHECK, EMPTY, IMAGE, USE_NATIVE_DRIVE } from './constants';
 
-const ADD_WISH = 'Add to whislist';
-const CHECK = '✅';
-const EMPTY = '';
 interface Props {
   route: {
     params: {
@@ -47,18 +45,18 @@ export default function DetailBook({
     Animated.parallel([
       Animated.timing(borderRadius, {
         toValue: 100,
-        duration: 2000,
-        useNativeDriver: false
+        duration: ANIMATE_DURATION,
+        useNativeDriver: USE_NATIVE_DRIVE
       }),
       Animated.timing(scale, {
         toValue: 0.9,
-        duration: 2000,
-        useNativeDriver: false
+        duration: ANIMATE_DURATION,
+        useNativeDriver: USE_NATIVE_DRIVE
       }),
       Animated.timing(animationColor, {
         toValue: 1,
-        duration: 2000,
-        useNativeDriver: false
+        duration: ANIMATE_DURATION,
+        useNativeDriver: USE_NATIVE_DRIVE
       })
     ]).start(() => setTextBtn(CHECK));
   };
@@ -68,8 +66,8 @@ export default function DetailBook({
       <Image
         source={image ? { uri: image } : notImageFound}
         style={styles.images}
-        resizeMethod="auto"
-        resizeMode="contain"
+        resizeMethod={IMAGE.RESIZE_METHOD}
+        resizeMode={IMAGE.RESIZE_MODE}
       />
       <View style={styles.containerText}>
         <Text style={styles.title}>{title}</Text>
@@ -77,7 +75,7 @@ export default function DetailBook({
       </View>
       <Pressable onPress={handlePressAnimation}>
         <Animated.View style={[styles.btnRent, animatedStyleBtn]}>
-          <Animated.Text style={[styles.btnTxt]}>{textBtn}</Animated.Text>
+          <Text style={styles.btnTxt}>{textBtn}</Text>
         </Animated.View>
       </Pressable>
     </View>

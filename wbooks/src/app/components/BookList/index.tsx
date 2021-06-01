@@ -16,11 +16,8 @@ function BookList({ setLoading }: Props): ReactElement {
   const bookList = useSelector((state: BookState) => state.books);
   useEffect(() => {
     dispatch(actionCreator.getBooksList());
-    if (bookList?.length < 1) {
-      setLoading(true);
-    } else {
-      setLoading(false);
-    }
+    if (bookList?.length < 1) setLoading(true);
+    else setLoading(false);
   }, [dispatch, setLoading, bookList]);
 
   return (

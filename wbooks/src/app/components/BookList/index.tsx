@@ -20,8 +20,7 @@ function BookList({ setLoading }: Props): ReactElement {
   }, [dispatch, books]);
 
   useEffect(() => {
-    if (booksLoading) setLoading(true);
-    else setLoading(false);
+    setLoading(booksLoading);
   }, [booksLoading, setLoading]);
 
   return (

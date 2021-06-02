@@ -9,14 +9,13 @@ import styles from './styles';
 
 const message = 'No Results';
 interface Props {
-  setData: (value: boolean) => void;
+  setDataStatus: (value: boolean) => void;
 }
-function SearchBook({ setData }: Props) {
-  const { filteredBooks } = useFilterBook();
+function SearchBook({ setDataStatus }: Props) {
+  const { filteredBooks, stateResults } = useFilterBook();
   useEffect(() => {
-    if (filteredBooks.length < 1) setData(false);
-    else setData(true);
-  }, [filteredBooks.length, setData]);
+    setDataStatus(stateResults);
+  }, [filteredBooks.length, setDataStatus, stateResults]);
   return (
     <FlatList
       style={styles.container}

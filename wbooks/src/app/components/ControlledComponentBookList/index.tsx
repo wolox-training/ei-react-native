@@ -4,33 +4,37 @@ import { blue } from '@constants/colors';
 
 import styles from './style';
 
-export const WithLoading = <T extends object>(
-  WrappedComponent: React.ComponentType<T>,
+interface Props {
+  setLoading: (value: boolean) => void;
+  setDataStatus: (value: boolean) => void;
+}
+
+const ManageUseState = () => {
+  const [isLoading, setLoading] = useState<boolean>(false);
+  const [data, setDataStatus] = useState<boolean>(true);
+  return { isLoading, setLoading, data, setDataStatus };
+};
+
+export const WithLoading = (
+  WrappedComponent: React.FunctionComponent<Props>,
   loadingMessage?: string
-) => {
-  function HOC(props: any) {
-    const [isLoading, setLoading] = useState(false);
-    const [data, setData] = useState(true);
+) => () => {
+  const { isLoading, setLoading, data, setDataStatus } = ManageUseState();
 
-    const setLoadingState = (isComponentLoading: boolean) => {
-      setLoading(isComponentLoading);
-    };
+  const setLoadingState = (isComponentLoading: boolean) => setLoading(isComponentLoading);
 
-    const renderActivity = () => <ActivityIndicator size="large" color={blue} />;
-    const renderNullDataMessage = () => (
-      <View style={styles.containerText}>
-        <Text style={styles.textAlert}>{loadingMessage}</Text>
-      </View>
-    );
-
-    return (
-      <>
-        {isLoading && renderActivity()}
-        {!data && renderNullDataMessage()}
-        <WrappedComponent {...props} setLoading={setLoadingState} setData={setData} />
-      </>
-    );
-  }
-  return HOC;
+  const renderActivity = () => <ActivityIndicator size="large" color={blue} />;
+  const renderNullDataMessage = () => (
+    <View style={styles.containerText}>
+      <Text style={styles.textAlert}>{loadingMessage}</Text>
+    </View>
+  );
+  return (
+    <>
+      {isLoading && renderActivity()}
+      {!data && renderNullDataMessage()}
+      <WrappedComponent setLoading={setLoadingState} setDataStatus={setDataStatus} />
+    </>
+  );
 };
 export default WithLoading;

@@ -13,16 +13,20 @@ interface Props {
 
 function BookList({ setLoading }: Props): ReactElement {
   const dispatch = useDispatch();
-  const bookList = useSelector((state: BookState) => state.books);
+  const { books, booksLoading } = useSelector((state: BookState) => state);
+
   useEffect(() => {
     dispatch(actionCreator.getBooksList());
-    if (bookList?.length < 1) setLoading(true);
+  }, [dispatch, books]);
+
+  useEffect(() => {
+    if (booksLoading) setLoading(true);
     else setLoading(false);
-  }, [dispatch, setLoading, bookList]);
+  }, [booksLoading, setLoading]);
 
   return (
     <FlatList
-      data={bookList}
+      data={books}
       renderItem={RenderBookList}
       showsVerticalScrollIndicator={false}
       keyExtractor={keyExtractor}

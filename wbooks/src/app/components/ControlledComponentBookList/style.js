@@ -1,17 +1,17 @@
 import { StyleSheet } from 'react-native';
 
-const ALIGN_ALERT_TEXT = 'center';
+const CENTER = 'center';
 const styles = StyleSheet.create({
   containerText: {
     flex: 1,
-    justifyContent: ALIGN_ALERT_TEXT,
-    alignItems: ALIGN_ALERT_TEXT
+    justifyContent: CENTER,
+    alignItems: CENTER
   },
   textAlert: {
     fontWeight: 'bold',
-    alignItems: ALIGN_ALERT_TEXT,
-    justifyContent: ALIGN_ALERT_TEXT,
-    textAlign: ALIGN_ALERT_TEXT
+    alignItems: CENTER,
+    justifyContent: CENTER,
+    textAlign: CENTER
   }
 });
 export default styles;

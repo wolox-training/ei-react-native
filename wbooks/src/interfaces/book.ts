@@ -18,6 +18,7 @@ export interface BookState {
   books: BookInterface[];
   booksError?: string | null;
   searchBook: string;
+  booksLoading: boolean;
 }
 
 export interface BookPromise {

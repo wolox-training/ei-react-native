@@ -9,32 +9,25 @@ interface Props {
   setDataStatus: (value: boolean) => void;
 }
 
-const ManageUseState = () => {
-  const [isLoading, setLoading] = useState<boolean>(false);
-  const [data, setDataStatus] = useState<boolean>(true);
-  return { isLoading, setLoading, data, setDataStatus };
-};
+export const WithLoading = (WrappedComponent: React.FunctionComponent<Props>, loadingMessage?: string) =>
+  function HOC() {
+    const [isLoading, setLoading] = useState<boolean>(false);
+    const [data, setDataStatus] = useState<boolean>(true);
 
-export const WithLoading = (
-  WrappedComponent: React.FunctionComponent<Props>,
-  loadingMessage?: string
-) => () => {
-  const { isLoading, setLoading, data, setDataStatus } = ManageUseState();
+    const setLoadingState = (isComponentLoading: boolean) => setLoading(isComponentLoading);
 
-  const setLoadingState = (isComponentLoading: boolean) => setLoading(isComponentLoading);
-
-  const renderActivity = () => <ActivityIndicator size="large" color={blue} />;
-  const renderNullDataMessage = () => (
-    <View style={styles.containerText}>
-      <Text style={styles.textAlert}>{loadingMessage}</Text>
-    </View>
-  );
-  return (
-    <>
-      {isLoading && renderActivity()}
-      {!data && renderNullDataMessage()}
-      <WrappedComponent setLoading={setLoadingState} setDataStatus={setDataStatus} />
-    </>
-  );
-};
+    const renderActivity = () => <ActivityIndicator size="large" color={blue} />;
+    const renderNullDataMessage = () => (
+      <View style={styles.containerText}>
+        <Text style={styles.textAlert}>{loadingMessage}</Text>
+      </View>
+    );
+    return (
+      <>
+        {isLoading && renderActivity()}
+        {!data && renderNullDataMessage()}
+        <WrappedComponent setLoading={setLoadingState} setDataStatus={setDataStatus} />
+      </>
+    );
+  };
 export default WithLoading;

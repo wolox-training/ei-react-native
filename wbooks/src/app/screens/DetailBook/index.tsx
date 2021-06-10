@@ -4,7 +4,7 @@ import notImageFound from '@assets/General/not_image_found.png';
 import { cyan, green } from '@constants/colors';
 
 import styles from './styles';
-import { DETAILBOOK_CONST } from './constants';
+import { DETAILBOOK_CONST, ANIMATE_DURATION } from './constants';
 
 interface Props {
   route: {
@@ -41,22 +41,23 @@ export default function DetailBook({
     ]
   };
   const handlePressAnimation = () => {
+    const NATIVEDRIVEFALSE = false;
     setTextBtn(DETAILBOOK_CONST.EMPTY);
     Animated.parallel([
       Animated.timing(borderRadius, {
         toValue: 100,
-        duration: DETAILBOOK_CONST.ANIMATE_DURATION,
-        useNativeDriver: DETAILBOOK_CONST.USE_NATIVE_DRIVE
+        duration: ANIMATE_DURATION,
+        useNativeDriver: NATIVEDRIVEFALSE
       }),
       Animated.timing(scale, {
         toValue: 0.9,
-        duration: DETAILBOOK_CONST.ANIMATE_DURATION,
-        useNativeDriver: DETAILBOOK_CONST.USE_NATIVE_DRIVE
+        duration: ANIMATE_DURATION,
+        useNativeDriver: NATIVEDRIVEFALSE
       }),
       Animated.timing(animationColor, {
         toValue: 1,
-        duration: DETAILBOOK_CONST.ANIMATE_DURATION,
-        useNativeDriver: DETAILBOOK_CONST.USE_NATIVE_DRIVE
+        duration: ANIMATE_DURATION,
+        useNativeDriver: NATIVEDRIVEFALSE
       })
     ]).start(() => setTextBtn(DETAILBOOK_CONST.CHECK));
   };
@@ -66,8 +67,8 @@ export default function DetailBook({
       <Image
         source={image ? { uri: image } : notImageFound}
         style={styles.images}
-        resizeMethod={'auto'}
-        resizeMode={'contain'}
+        resizeMethod="auto"
+        resizeMode="contain"
       />
       <View style={styles.containerText}>
         <Text style={styles.title}>{title}</Text>

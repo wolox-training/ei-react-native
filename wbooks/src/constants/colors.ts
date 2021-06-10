@@ -6,3 +6,4 @@ export const whiteBlue = '#E5EDF7';
 export const cyan = '#1EC9E5';
 export const lightGray = '#C4D8EB';
 export const lightCyanusBlue = '#1da7d1';
+export const green = '#00D100';

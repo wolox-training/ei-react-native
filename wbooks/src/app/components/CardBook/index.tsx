@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react';
-import { Image, Text, View } from 'react-native';
+import React, { ReactElement, useEffect } from 'react';
+import { Image, Text, Animated, View } from 'react-native';
 import imageNotFound from '@assets/General/not_image_found.png';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/core';
@@ -19,9 +19,23 @@ export default function CardBook({ image, title, author, id }: Props): ReactElem
   const handlePress = () => {
     navigation.navigate(Routes.DetailBook, { image, title, author, id });
   };
+  const opacity = React.useRef(new Animated.Value(0)).current;
+  const DELAYBYID = 350 * id;
+  const customStyle = {
+    opacity
+  };
+  useEffect(() => {
+    Animated.timing(opacity, {
+      toValue: 1,
+      duration: 1000,
+      delay: DELAYBYID,
+      useNativeDriver: true
+    }).start();
+  }, [opacity, DELAYBYID]);
+
   return (
     <TouchableWithoutFeedback onPress={handlePress}>
-      <View style={styles.containerCard}>
+      <Animated.View style={[styles.containerCard, customStyle]}>
         <Image
           source={image ? { uri: image } : imageNotFound}
           style={styles.image}
@@ -32,7 +46,7 @@ export default function CardBook({ image, title, author, id }: Props): ReactElem
           <Text style={styles.titleCard}>{title}</Text>
           <Text style={styles.authorCard}>{author}</Text>
         </View>
-      </View>
+      </Animated.View>
     </TouchableWithoutFeedback>
   );
 }

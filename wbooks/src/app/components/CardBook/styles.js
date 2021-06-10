@@ -4,7 +4,7 @@ import { white } from '@constants/colors';
 const styles = StyleSheet.create({
   containerCard: {
     flexDirection: 'row',
-    height: 95,
+    minHeight: 95,
     borderRadius: 5,
     width: '89%',
     alignSelf: 'center',

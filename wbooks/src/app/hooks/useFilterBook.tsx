@@ -13,8 +13,7 @@ export default function useFilterBook() {
 
   useEffect(() => {
     dispatch(actionCreator.getBooksList());
-    if (filteredBooks.length > 0) setStateResults(true);
-    else setStateResults(false);
+    setStateResults(filteredBooks.length > 0);
   }, [dispatch, filteredBooks, setStateResults]);
 
   return { searchBook, filteredBooks, stateResults };
